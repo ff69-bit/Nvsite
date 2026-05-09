@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Atelier Noble Bois</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f2ee;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.75);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    color:#d4a373;
+    font-size:34px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#d4a373;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1513467655676-561b7d489a88?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:900px;
+    animation:fade 1.2s ease;
+}
+
+.hero h1{
+    font-size:78px;
+    margin-bottom:25px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.hero p{
+    font-size:24px;
+    color:#e0e0e0;
+    margin-bottom:40px;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    padding:18px 40px;
+    background:#d4a373;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#b88350;
+    transform:scale(1.05);
+}
+
+/* SECTION */
+
+section{
+    padding:110px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:52px;
+    margin-bottom:15px;
+    color:#2d2016;
+}
+
+.section-title p{
+    color:#777;
+    font-size:20px;
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+}
+
+.service-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.service-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.service-content{
+    padding:30px;
+}
+
+.service-content h3{
+    color:#d4a373;
+    margin-bottom:15px;
+    font-size:30px;
+}
+
+.service-content p{
+    color:#555;
+    line-height:1.7;
+}
+
+/* ABOUT */
+
+.about{
+    background:#24180f;
+    color:white;
+}
+
+.about-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    max-width:550px;
+    border-radius:20px;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-size:55px;
+    color:#d4a373;
+    margin-bottom:25px;
+}
+
+.about-text p{
+    margin-bottom:20px;
+    line-height:1.9;
+    color:#ddd;
+    font-size:19px;
+}
+
+/* STATS */
+
+.stats{
+    background:#d4a373;
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:60px;
+}
+
+.stat p{
+    font-size:22px;
+    margin-top:10px;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:0.4s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* PROCESS */
+
+.process{
+    background:white;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.step{
+    background:#f5f2ee;
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+}
+
+.step h3{
+    font-size:45px;
+    color:#d4a373;
+    margin-bottom:20px;
+}
+
+.step h4{
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:55px;
+    margin-bottom:25px;
+    color:#d4a373;
+}
+
+.contact p{
+    font-size:22px;
+    margin:15px 0;
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    color:#777;
+    text-align:center;
+    padding:30px;
+}
+
+/* ANIMATION */
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.about-container{
+    flex-direction:column;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Atelier Noble Bois</div>
+
+<nav>
+<a href="#services">Services</a>
+<a href="#about">À propos</a>
+<a href="#gallery">Réalisations</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Menuiserie d'Exception</h1>
+
+<p>
+Création de cuisines, terrasses, meubles et aménagements sur mesure
+avec des matériaux nobles et un savoir-faire artisanal haut de gamme.
+</p>
+
+<a href="#contact" class="btn">Demander un devis</a>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="section-title">
+<h2>Nos Services</h2>
+<p>Des réalisations uniques pensées pour durer.</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+
+<div class="service-content">
+<h3>Cuisines sur mesure</h3>
+
+<p>
+Des cuisines modernes et élégantes conçues pour optimiser votre espace
+avec des finitions premium et un design intemporel.
+</p>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop">
+
+<div class="service-content">
+<h3>Terrasses bois</h3>
+
+<p>
+Terrasses robustes et chaleureuses pour transformer vos espaces extérieurs
+en véritables lieux de vie.
+</p>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1513467655676-561b7d489a88?q=80&w=1200&auto=format&fit=crop">
+
+<div class="service-content">
+<h3>Mobilier artisanal</h3>
+
+<p>
+Fabrication de meubles uniques réalisés avec passion dans notre atelier
+à partir de matériaux sélectionnés avec soin.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<div class="about-container">
+
+<img src="https://images.unsplash.com/photo-1513467655676-561b7d489a88?q=80&w=1200&auto=format&fit=crop">
+
+<div class="about-text">
+
+<h2>Un savoir-faire authentique</h2>
+
+<p>
+Depuis plus de 15 ans, notre atelier accompagne particuliers et professionnels
+dans la réalisation de projets bois haut de gamme.
+</p>
+
+<p>
+Chaque création est pensée dans les moindres détails afin d'offrir
+une qualité durable, esthétique et fonctionnelle.
+</p>
+
+<p>
+Notre passion du bois et notre exigence de finition nous permettent
+de proposer des réalisations uniques adaptées à chaque client.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h3>15+</h3>
+<p>Années d'expérience</p>
+</div>
+
+<div class="stat">
+<h3>500+</h3>
+<p>Projets réalisés</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Clients satisfaits</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Accompagnement</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="section-title">
+<h2>Nos Réalisations</h2>
+<p>Découvrez quelques projets réalisés par notre atelier.</p>
+</div>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1513467655676-561b7d489a88?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<section class="process">
+
+<div class="section-title">
+<h2>Notre Méthode</h2>
+<p>Un accompagnement clair du début à la fin.</p>
+</div>
+
+<div class="process-grid">
+
+<div class="step">
+<h3>01</h3>
+<h4>Analyse</h4>
+<p>Étude du projet et des besoins du client.</p>
+</div>
+
+<div class="step">
+<h3>02</h3>
+<h4>Conception</h4>
+<p>Création de plans et choix des matériaux.</p>
+</div>
+
+<div class="step">
+<h3>03</h3>
+<h4>Fabrication</h4>
+<p>Travail artisanal réalisé dans notre atelier.</p>
+</div>
+
+<div class="step">
+<h3>04</h3>
+<h4>Installation</h4>
+<p>Pose et finitions avec un suivi complet.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contactez-nous</h2>
+
+<p>📞 06 00 00 00 00</p>
+<p>📧 contact@ateliernoblebois.fr</p>
+<p>📍 Saint-Étienne, France</p>
+
+<br>
+
+<a href="#" class="btn">Obtenir un devis gratuit</a>
+
+</section>
+
+<footer>
+© 2026 Atelier Noble Bois — Tous droits réservés
+</footer>
+
+</body>
+</html>
